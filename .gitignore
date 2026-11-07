@@ -1,0 +1,17 @@
+node_modules/
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+supabase/.temp/
+supabase/.branches/
+.cache/
+coverage/
+evals/results/
+backups/
+*.log
+*.dump
+*.sql.gz
+.DS_Store

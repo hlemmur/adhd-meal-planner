@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "lib": ["deno.ns", "dom", "esnext"]
+  },
+  "fmt": {
+    "lineWidth": 100,
+    "proseWrap": "preserve",
+    "exclude": ["MVP_PLAN.md", "package-lock.json"]
+  },
+  "lint": { "exclude": [] },
+  "exclude": ["node_modules", "supabase/.temp", "supabase/.branches", "evals/results", "backups"]
+}
