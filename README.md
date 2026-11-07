@@ -71,12 +71,15 @@ public and reports liveness only, not database/Telegram/Gemini readiness. Its
 `verify_jwt=false` setting applies only to health; future ingress validates the
 Telegram secret separately. No integration credentials are needed for this probe.
 
-Local Studio is available at `http://127.0.0.1:54323`. Inspect local credentials
-with `npm run supabase -- status` and keep its output private. Stop function serve
+The local configuration disables Studio, Realtime, Storage, SMTP and analytics,
+which this Telegram MVP does not consume, to reduce Docker memory use. PostgreSQL,
+the API gateway, Auth and Edge Functions remain real services. Enable additional
+services explicitly in `supabase/config.toml` only when a task needs them.
+Inspect local credentials with `npm run supabase -- status` and keep its output private. Stop function serve
 with Ctrl+C and stop containers with `npm run local:stop`. Local volumes persist;
 do not use destructive database-reset flags to work around unrelated failures.
 
-If ports 54321–54324 are occupied by another project, stop only the conflicting
+If ports 54321–54322 are occupied by another project, stop only the conflicting
 stack you own or update this project's port configuration and fixed smoke target.
 If startup fails, inspect Docker and container health rather than ignoring checks.
 

@@ -13,7 +13,7 @@
     "check": "npm run format:check && npm run lint && npm run typecheck && npm test",
     "config:check": "deno run --allow-env --env-file=.env scripts/check-config.ts",
     "supabase": "supabase",
-    "local:start": "supabase start",
+    "local:start": "supabase start --exclude postgres-meta",
     "local:stop": "supabase stop",
     "local:serve": "supabase functions serve health",
     "smoke:local": "deno run --allow-net=127.0.0.1:54321 scripts/smoke-local.ts"

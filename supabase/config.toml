@@ -22,13 +22,21 @@ schema_paths = []
 enabled = false
 
 [studio]
-enabled = true
+enabled = false
 port = 54323
 api_url = "http://127.0.0.1"
 
 [local_smtp]
-enabled = true
+enabled = false
 port = 54324
+
+# The Telegram MVP has no realtime subscriptions or object-storage workload.
+# Avoid unnecessary containers on developer machines with limited Docker memory.
+[realtime]
+enabled = false
+
+[storage]
+enabled = false
 
 [auth]
 enabled = true
